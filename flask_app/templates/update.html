@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+    <h2>Hello {{session['first_name']}}</h2>
+    <h3>Update the Recipe</h3>
+    <form action="/recipes/update" method="post">
+        <label>
+            Name
+            <input type="text" name="name" value="{{this_recipe.name}}">
+        </label>
+        <label>
+            Description
+            <input type="text" name="decription" value="{{this_recipe.decription}}">
+        </label>
+        <label>
+            Instructions
+            <input type="text" name="instructions" value="{{this_recipe.instructions}}">
+        </label>
+        <label>
+            Updated On:
+            <input type="date" name="updated_on" value="{{this_recipe.updated_on}}">
+        </label>
+        <input type="hidden" name="id" value="{{this_recipe.id}}">
+        <input type="submit" value="Update!">
+    </form>
+</body>
+</html>

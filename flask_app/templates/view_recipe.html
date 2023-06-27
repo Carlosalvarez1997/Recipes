@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h1{
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif    ;
+        }
+        .body{
+            align-items: center;
+            border: 3px solid black;
+            width: 600px;
+            height: 500px;
+            margin: 0px auto;
+            background-color: blanchedalmond;
+        }
+        .desc, .instr,.less{
+            margin-top: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+        h3{
+            margin-left: -10px;
+        }
+    </style>
+    <title>Recepie</title>
+</head>
+<body>
+    <h1>{{this_recipe.name}}</h1>
+    <a href="/users/recipe">Go to All Receipies</a>
+
+    <div class="body">
+        <div class="desc">
+            <h2>Description</h2>
+            <h3>{{this_recipe.decription}}</h3>
+        </div>
+        <div class="instr">
+            <h2>Instructions</h2>
+        <h3>{{this_recipe.instructions}}</h3>
+        </div>
+        <div class="less">
+            <h2>Less Than 30 Min?</h2>
+            <h3>{{this_recipe.less_than_thirty}}</h3>
+        </div>
+    </div>
+
+</body>
+</html>

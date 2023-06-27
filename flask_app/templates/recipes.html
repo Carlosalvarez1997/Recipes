@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a recipe</title>
+</head>
+<body>
+    <h1>Create A recipe!</h1>
+    {%with messages = get_flashed_messages()%}
+        {%if messages%}
+        <div id="popup">
+            {%for message in messages%}
+            <p>{{message}}</p>
+            {%endfor%}
+            <button onclick="popup.remove()">Okay</button>
+        </div>
+        {%endif%}
+    {%endwith%}
+        <a href="/users/recipe">Go To Recepies</a>
+    <form action="/recipes/create" method="post">
+        <input type="hidden" name="users_id" value="{{session['user_id']}}">
+        <label>
+            Recipe Name
+            <input type="text" name="name">
+        </label>
+        <label>
+            Description
+            <input type="text" name="decription">
+        </label>
+        <label>
+            Instructions
+            <input type="text" name="instructions">
+        </label>
+        <label>
+            Created On
+            <input type="date" name="created_at">
+        </label>
+        <label>
+            Less than 30 Minutes?
+            <label>
+                Yes
+            <input type="radio" name="less_than_thirty" value='Yes'>
+            </label>
+            <label>
+                No
+            <input type="radio" name="less_than_thirty" value="No">
+            </label>
+        </label>
+        <input type="submit" value="Create Your Recipe!">
+    </form>
+
+</body>
+</html>
